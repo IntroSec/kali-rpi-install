@@ -2,7 +2,7 @@
 
 ################################################################################
 #
-#    filename: kali-rpi-inst.sh
+#    filename: kali-rpi-install.sh
 # description: Script to put image on SDcard of RPI2/3
 #     version: v1.0.1
 #      author: Andre Mattie
