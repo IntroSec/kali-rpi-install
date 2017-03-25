@@ -64,7 +64,7 @@ echo -e $SHA1SUM $FILE > $CHECKSUM
 echo "Checking file: $FILE"
 echo "Using SHA1 file: $CHECKSUM"
 
-if [ $VERIFY -ne "OK" ];
+if [ "$VERIFY" != "OK" ];
 then
 	echo "SHA1 sums dont match, file if corrupted. Please re-download the image"
 else
@@ -78,10 +78,10 @@ else
 fi
 
 # Print confirmation that install is complete
-echo ""
-echo ""
+echo ''
+echo ''
 echo "Kali Linux for Raspberry Pi 2/3 has finished installing"
-echo ""
-echo ""
+echo ''
+echo ''
 
 exit 0
