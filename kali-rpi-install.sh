@@ -19,23 +19,23 @@ FILE="kali-2.1.2-rpi2.img.xz"
 IMAGE="kali-2.1.2-rpi2.img"
 SHA1SUM="db36fcd53c630fd32f2f8943dddd9f57b3673c5a"
 CHECKSUM="kali-2.1.2-rpi2.img.xz.sha1"
-VERIFY="`sha1sum -c $CHECKSUM | awk '{print $2)'`"
+VERIFY=`sha1sum -c $CHECKSUM | awk '{print $2}'`
 
 # ensure user is root
 if [ "$(id -u)" -ne "0" ] ; then
     echo "You must be root to run this script"
-    exit 1
+    exit 0
 fi
 
 function DOWNLOAD {
 	wget https://images.offensive-security.com/arm-images/kali-2.1.2-rpi2.img.xz
-	exit 1
+	return
 }
 
 function INSTALL {
 	cd ~/tmp
 	`dd if=$IMAGE of=$DEVICE bs=512k`
-	exit 0
+	return
 }
 
 if [ -z "$1" ]
@@ -55,12 +55,11 @@ then
 	DOWNLOAD
 else
 	echo "The file $FILE exists."
-
 fi
 
 
 # verify downloaded image
-echo -e $SHA1SUM $FILE > $CHECKSUM
+echo -e "$SHA1SUM $FILE" > $CHECKSUM
 echo "Checking file: $FILE"
 echo "Using SHA1 file: $CHECKSUM"
 
