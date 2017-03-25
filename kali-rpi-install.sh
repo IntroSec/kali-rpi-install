@@ -19,7 +19,7 @@ FILE="kali-2.1.2-rpi2.img.xz"
 IMAGE="kali-2.1.2-rpi2.img"
 SHA1SUM="db36fcd53c630fd32f2f8943dddd9f57b3673c5a"
 CHECKSUM="kali-2.1.2-rpi2.img.xz.sha1"
-VERIFY="$(sha1sum -c $CHECKSUM | awk '{print $2}')"
+VERIFY="`sha1sum -c $CHECKSUM | awk '{print $2)'`"
 
 # ensure user is root
 if [ "$(id -u)" -ne "0" ] ; then
