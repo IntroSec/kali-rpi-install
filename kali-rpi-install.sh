@@ -77,4 +77,11 @@ else
 	INSTALL
 fi
 
+# Print confirmation that install is complete
+echo ""
+echo ""
+echo "Kali Linux for Raspberry Pi 2/3 has finished installing"
+echo ""
+echo ""
+
 exit 0
