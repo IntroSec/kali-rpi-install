@@ -64,7 +64,7 @@ echo -e $SHA1SUM $FILE > $CHECKSUM
 echo "Checking file: $FILE"
 echo "Using SHA1 file: $CHECKSUM"
 
-if [ $VERIFY != "OK" ];
+if [ $VERIFY -ne "OK" ];
 then
 	echo "SHA1 sums dont match, file if corrupted. Please re-download the image"
 else
